@@ -1,4 +1,5 @@
 // Rain Water Trapping
+// https://leetcode.com/problems/trapping-rain-water/
 
 const waterTrapping = (height) => {
   let left = 0;
@@ -36,9 +37,7 @@ const waterTrappingBrute = (buildings) => {
   for (let i = 1; i < buildings.length; i++) {
     left[i] = Math.max(left[i - 1], buildings[i]);
   }
-
   right[buildings.length - 1] = buildings[buildings.length - 1];
-
   for (let i = buildings.length - 2; i >= 0; i--) {
     right[i] = Math.max(right[i + 1], buildings[i]);
   }
@@ -48,12 +47,4 @@ const waterTrappingBrute = (buildings) => {
   return ans;
 };
 
-// [
-//     4, 4, 4, 4,
-//     3, 3, 3, 2
-//   ]
-
-// [
-//     3, 3, 3, 4,
-//     4, 4, 4, 4
-//   ]
+console.log(waterTrappingBrute([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]));
