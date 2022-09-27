@@ -5,8 +5,7 @@ const findCircleNum = (isConnected) => {
     const e = isConnected[i];
     graph[i] = [];
     for (let j = 0; j < e.length; j++) {
-      if (j === i) continue;
-      if (!e[j]) continue;
+      if (j === i || !e[j]) continue;
       graph[i].push(j);
     }
   }

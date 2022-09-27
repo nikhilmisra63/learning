@@ -37,14 +37,18 @@ const solveTabulation = (coins, amount) => {
   table[0] = 0;
   for (let i = 1; i <= amount; i++) {
     for (let j = 0; j < coins.length; j++) {
-      if (i - coins[j] >= 0 && table[i - coins[j]] != Infinity) {
-        table[i] = Math.min(table[i], 1 + table[i - coins[j]]);
+      for (const coin of coins) {
+        if (i - coin >= 0) {
+          table[i] = Math.min(table[i], 1 + table[i - coin]);
+        }
       }
     }
   }
   return table[amount];
 };
 
+// Time - O(A*N), where A=amount and  N=size of coins array
+// Space - O(A), where A=amount
 const coinChange = (coins, amount) => {
   //   const ans = solveRecursive(coins, amount); // Recursion
   //   const ans = coinChangeM(coins, amount); // Recursion memoization

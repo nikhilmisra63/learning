@@ -28,4 +28,4 @@ const isPalindrome = (str) => {
   return false;
 };
 
-console.log(validPalindrome("abc"));
+console.log(validPalindrome("aabac"));

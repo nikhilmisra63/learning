@@ -26,7 +26,7 @@ var bstFromPreorder = function (preorder) {
   return bst;
 };
 
-console.log(bstFromPreorder([8, 5, 1, 7, 10, 12]));
+// console.log(bstFromPreorder([8, 5, 1, 7, 10, 12]));
 
 var bstFromPreorder = function (preorder) {
   let compute = (min = -Infinity, max = Infinity) => {

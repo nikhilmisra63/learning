@@ -1,3 +1,6 @@
+// https://leetcode.com/problems/course-schedule/
+// Course Schedule
+
 const findOrder = function (numCourses, prerequisites) {
   const order = [];
   const queue = [];
@@ -13,11 +16,11 @@ const findOrder = function (numCourses, prerequisites) {
     }
     indegree[e]++;
   }
-  console.log(graph, indegree);
+
   for (let i = 0; i < indegree.length; i++) {
     if (indegree[i] === 0) queue.push(i);
   }
-  console.log(queue, "q");
+
   while (queue.length) {
     const v = queue.shift();
     if (v in graph) {
