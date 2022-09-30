@@ -21,4 +21,4 @@ const allPathsSourceTarget = function (graph) {
   return res;
 };
 
-console.log(allPathsSourceTarget([[1]]));
+console.log(allPathsSourceTarget([[1, 2], [3], [3], []]));
